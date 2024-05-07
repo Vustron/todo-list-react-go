@@ -1,4 +1,4 @@
-module example.com/test
+module github.com/Vustron/todo-list-react-go
 
 go 1.22.2
 
