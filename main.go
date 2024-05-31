@@ -30,9 +30,12 @@ var collection *mongo.Collection
 func main() {
 
 	// load env
-	err := godotenv.Load(".env")
-	if err != nil{
-		log.Fatal("Error loading environmental variable:",err)
+	if os.Getenv("ENV") != "production" {
+		// Load the .env file if not in production
+		err := godotenv.Load(".env")
+		if err != nil {
+			log.Fatal("Error loading .env file:", err)
+		}
 	}
 
 	// init db url
