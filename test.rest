@@ -1,3 +1,39 @@
-#DELETE
-http://127.0.0.1:4000/api/todos/1
+@hostname =http://127.0.0.1/
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
 
+###
+
+POST http://127.0.0.1:5000/api/todos HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+   "body": "Learn react"
+}
+
+###
+
+GET http://127.0.0.1:5000/api/todos HTTP/1.1
+
+###
+
+@id = 665951beb5c4b4d2cfe0248f
+
+PATCH http://127.0.0.1:5000/api/todos/{{id}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+   "body": "Learn python"
+}
+
+###
+
+@id = 665951b4b5c4b4d2cfe0248d
+
+DELETE http://127.0.0.1:5000/api/todos/{{id}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+   "body": "Learn python"
+}
